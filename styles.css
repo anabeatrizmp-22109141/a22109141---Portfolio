@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    padding: 20px 60px
+}
+
+header>span {
+    display: flex;
+    background: linear-gradient(90deg, #ff04b4, #9c08c9);;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* BOTÃO DO MENU */
+
+.menu-button {
+    background-color: transparent;
+    padding: 16px;
+    font-size: 2rem;
+    right: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.menu-container {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-43deg, #c51a7c, #141735 90%);
+    z-index: 9000;
+}
+
+li,
+a {
+    font-size: 3rem;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    color: rgb(200, 214, 209);
+    font-weight: bold;
+}
+
+a {
+    position: relative;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: white;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+ul {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background: gray;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.hero-page {
+    display: flex;
+}
+
+.background-container {
+    background-image: url("images/background.png");
+    background-position: center;
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    top: 0;
+    right: 0;
+}
+
+.hero-page-texto {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+    padding-left: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-page-texto>h1 {
+    font-size: 6rem;
+    padding-bottom: 30px;
+}
+
+.hero-page-texto>p {
+    font-size: 2rem;
+    display: flex;
+    justify-content: left;
+}
+
+.hero-page-texto>button {
+    margin-top: 50px;
+    height: 70px;
+    width: 300px;
+    background-color: white;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+
+.hero-page-texto>button:hover {
+    color: white;
+    background: linear-gradient(90deg, #ff04b4, #5e0f76);
+    transition: all 0.2s ease 0s;
+}
+
+/* BOTÃO */
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    --slider-offset: 0.3em;
+    position: absolute;
+    z-index: 3000;
+    margin-right: 60px;
+    margin-bottom: 20px;
+    right: 0;
+    bottom: 0;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon, 1.4em);
+    width: var(--size-of-icon, 1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset, 0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg, #f6c3dc, #f697ef 70%);
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #303136;
+}
+
+input:checked+.slider:before {
+    left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #9a1768, inset -10px -4px 0 0 #d5296b;
+
+}

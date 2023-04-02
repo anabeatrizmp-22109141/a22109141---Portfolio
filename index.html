@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
 </head>
+
 <body>
-    
+    <header>
+        <span>Ana Beatriz Pires</span>
+        <button class="menu-button" onclick="showMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </button>
+    </header>
+    <main>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+        <div class="menu-container">
+            <ul>
+                <li><a href="">Home</a> </li>
+                <li><a href="">About me</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">...</a></li>
+            </ul>
+        </div>
+        <div class="hero-page">
+            <div class="hero-page-texto">
+                <h1>Out of this World</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ipsam pariat</p>
+                <button>Contacta-me</button>
+            </div>
+            <div class="background-container"></div>
+        </div>
+    </main>
 </body>
+
 </html>
