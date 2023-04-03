@@ -4,21 +4,28 @@
     box-sizing: border-box;
 }
 
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*------------------------------------------------------ HEADER------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
 header {
     display: flex;
     justify-content: space-between;
     font-size: 2rem;
-    padding: 20px 60px
+    padding: 20px 60px;
+    background-color: black;
 }
 
 header>span {
     display: flex;
-    background: linear-gradient(90deg, #ff04b4, #9c08c9);;
+    background: linear-gradient(90deg, #ff04b4, #9c08c9);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    z-index: 9000;
 }
 
 /* BOTÃO DO MENU */
@@ -30,7 +37,7 @@ header>span {
     right: 0;
     border: none;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 100000;
 }
 
 .bar1,
@@ -106,14 +113,30 @@ ul {
     transform: translate(-50%, -50%);
 }
 
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-----------------------------------------------------------BODY----------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
+html,
 body {
-    background: gray;
+    background: black;
     background-repeat: no-repeat;
-    background-size: 100%;
+    min-height: 100vh;
+}
+
+.paginas {
+    width: 100%;
+    height: 100vh;
 }
 
 .hero-page {
     display: flex;
+    height: 100vh;
 }
 
 .background-container {
@@ -132,12 +155,13 @@ body {
     top: 0;
     height: 100vh;
     width: 50%;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     padding-left: 50px;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 10;
 }
 
 .hero-page-texto>h1 {
@@ -168,7 +192,16 @@ body {
     transition: all 0.2s ease 0s;
 }
 
-/* BOTÃO */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*----------------------------------------------------------BOTÃO NIGHT MODE------------------------------------------------ */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
 .switch {
     display: block;
     --width-of-switch: 3.5em;
@@ -225,5 +258,144 @@ input:checked+.slider:before {
     left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
     background: #303136;
     box-shadow: inset -3px -2px 5px -2px #9a1768, inset -10px -4px 0 0 #d5296b;
+}
 
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 10px 30px;
+    }
+
+    header>span {
+        font-size: 1.2rem;
+        z-index: 2000;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: translate(0, 5.8px) rotate(-45deg);
+    }
+
+    .change .bar3 {
+        transform: translate(0, -5.8px) rotate(45deg);
+    }
+
+    .menu-container>ul>li>a {
+        font-size: 0.8em;
+        padding: 0px;
+    }
+
+    li,
+    a {
+        padding: 3px;
+    }
+
+    .switch {
+        --width-of-switch: 2.5em;
+        --height-of-switch: 1.3em;
+        /* size of sliding icon -- sun and moon */
+        --size-of-icon: 1.1em;
+        --slider-offset: 0.1em;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+
+    .hero-page-texto {
+        width: 100%;
+        height: 45vh;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        padding-top: 40px;
+    }
+
+    .hero-page-texto>h1 {
+        font-size: 2.3em;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .hero-page-texto>p {
+        font-size: 1em;
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-page-texto>button {
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .background-container {
+        background-image: url("images/background.png");
+        background-size: cover;
+        position: absolute;
+        width: 110%;
+        bottom: 0;
+        height: 100%;
+    }
+}
+
+.about-me {
+    background: linear-gradient(180deg , #00000000 20% , #5e0f76 70%,) ;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 200px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.circulo-about-me {
+    background-color: #371956;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    border-radius: 300px;
+    box-shadow: 10px 5px 5px #290134;
+}
+
+#rocket {
+    width: 400px;
+    height: 400px;
+}
+
+.container-about-me {
+    border: #9a1768 4px solid;
+    border-radius: 50px;
+    color: white;
+    height: 700px;
+    width: 900px;
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.6em;
+}
+
+.contact-me {
+    height: 100vh;
+    background-color: crimson;
 }
