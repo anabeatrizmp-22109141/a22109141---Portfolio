@@ -2,21 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Overpass Mono', monospace;
+    overflow: hidden;
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*------------------------------------------------------ HEADER------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 2rem;
-    padding: 20px 60px;
+/* Header */
+body {
     background-color: black;
 }
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 20px 60px;
+    background-color: transparent;
+    z-index: 1000;
+}
 
-header>span {
+header > span {
     display: flex;
     background: linear-gradient(90deg, #ff04b4, #9c08c9);
     background-clip: text;
@@ -25,24 +31,19 @@ header>span {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    z-index: 9000;
 }
 
-/* BOTÃO DO MENU */
+/* botão hamburguer do menu */
 
 .menu-button {
     background-color: transparent;
     padding: 16px;
-    font-size: 2rem;
     right: 0;
     border: none;
     cursor: pointer;
-    z-index: 100000;
 }
 
-.bar1,
-.bar2,
-.bar3 {
+.bar1,.bar2, .bar3 {
     width: 35px;
     height: 5px;
     background-color: white;
@@ -70,11 +71,10 @@ header>span {
     height: 100%;
     width: 100%;
     background: linear-gradient(-43deg, #c51a7c, #141735 90%);
-    z-index: 9000;
+    z-index: 500;
 }
 
-li,
-a {
+li, a {
     font-size: 3rem;
     list-style: none;
     text-decoration: none;
@@ -113,94 +113,7 @@ ul {
     transform: translate(-50%, -50%);
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-
-
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-----------------------------------------------------------BODY----------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-
-html,
-body {
-    background: black;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-
-.paginas {
-    width: 100%;
-    height: 100vh;
-}
-
-.hero-page {
-    display: flex;
-    height: 100vh;
-}
-
-.background-container {
-    background-image: url("images/background.png");
-    background-position: center;
-    position: absolute;
-    height: 100vh;
-    width: 50%;
-    top: 0;
-    right: 0;
-}
-
-.hero-page-texto {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    height: 100vh;
-    width: 50%;
-    background-color: black;
-    padding-left: 60px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-}
-
-.hero-page-texto>h1 {
-    font-size: 6rem;
-    padding-bottom: 30px;
-}
-
-.hero-page-texto>p {
-    font-size: 2rem;
-    display: flex;
-    justify-content: left;
-}
-
-.hero-page-texto>button {
-    margin-top: 50px;
-    height: 70px;
-    width: 300px;
-    background-color: white;
-    font-size: 1.5rem;
-    border: 0;
-    border-radius: 50px;
-    transition: all 0.3s ease 0s;
-}
-
-.hero-page-texto>button:hover {
-    color: white;
-    background: linear-gradient(90deg, #ff04b4, #5e0f76);
-    transition: all 0.2s ease 0s;
-}
-
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-
-
-
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*----------------------------------------------------------BOTÃO NIGHT MODE------------------------------------------------ */
-/*-------------------------------------------------------------------------------------------------------------------------- */
+/* botão night mode */
 
 .switch {
     display: block;
@@ -260,108 +173,91 @@ input:checked+.slider:before {
     box-shadow: inset -3px -2px 5px -2px #9a1768, inset -10px -4px 0 0 #d5296b;
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
-/*-------------------------------------------------------------------------------------------------------------------------- */
+/* paginas */
 
-@media only screen and (max-width: 600px) {
-    header {
-        padding: 10px 30px;
-    }
+.paginas {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
 
-    header>span {
-        font-size: 1.2rem;
-        z-index: 2000;
-    }
+.paginas::-webkit-scrollbar {
+    display: none;
+}
 
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        margin: 4px 0;
-        transition: 0.4s;
-    }
+/* Hide scrollbar for IE, Edge and Firefox */
+.paginas {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
-    .change .bar1 {
-        transform: translate(0, 5.8px) rotate(-45deg);
-    }
+.hero-page {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
 
-    .change .bar3 {
-        transform: translate(0, -5.8px) rotate(45deg);
-    }
+.background-container {
+    background-image: url("images/background.png");
+    background-position: center;
+    height: 100vh;
+    width: 50%;
+    top: 0;
+    right: 0;
+}
 
-    .menu-container>ul>li>a {
-        font-size: 0.8em;
-        padding: 0px;
-    }
+.hero-page-texto {
+    z-index: -1;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: black;
+    padding-left: 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+}
 
-    li,
-    a {
-        padding: 3px;
-    }
+.hero-page-texto>h1 {
+    font-size: 4.5rem;
+    padding-bottom: 30px;
+}
 
-    .switch {
-        --width-of-switch: 2.5em;
-        --height-of-switch: 1.3em;
-        /* size of sliding icon -- sun and moon */
-        --size-of-icon: 1.1em;
-        --slider-offset: 0.1em;
-        margin-right: 30px;
-        margin-bottom: 10px;
-    }
+.hero-page-texto>p {
+    font-size: 1.4rem;
+    justify-content: left;
+}
 
-    .hero-page-texto {
-        width: 100%;
-        height: 45vh;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        padding-top: 40px;
-    }
+.hero-page-texto>button {
+    margin-top: 50px;
+    height: 70px;
+    width: 220px;
+    background-color: white;
+    font-size: 1.2rem;
+    border: 0;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
 
-    .hero-page-texto>h1 {
-        font-size: 2.3em;
-        padding-top: 50px;
-        padding-bottom: 20px;
-    }
-
-    .hero-page-texto>p {
-        font-size: 1em;
-        padding: 0;
-        text-align: center;
-    }
-
-    .hero-page-texto>button {
-        height: 50px;
-        width: 150px;
-        font-size: 20px;
-        margin-top: 20px;
-    }
-
-    .background-container {
-        background-image: url("images/background.png");
-        background-size: cover;
-        position: absolute;
-        width: 110%;
-        bottom: 0;
-        height: 100%;
-    }
+.hero-page-texto>button:hover {
+    color: white;
+    background: linear-gradient(90deg, #ff04b4, #5e0f76);
+    transition: all 0.2s ease 0s;
 }
 
 .about-me {
-    background: linear-gradient(180deg , #00000000) ;
+    scroll-snap-align: start;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 100px;
     align-items: center;
     position: relative;
-    overflow: hidden;
 }
 
 .circulo-about-me {
@@ -392,10 +288,98 @@ input:checked+.slider:before {
     align-items: center;
     text-align: center;
     vertical-align: middle;
-    font-size: 1.6em;
+    font-size: 1.3em;
 }
 
+
 .contact-me {
+    scroll-snap-align: start;
     height: 100vh;
+    width: 100vw;
     background-color: crimson;
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        position: fixed;
+        top: 0;
+        padding: 10px 30px;
+    }
+
+    header>span {
+        font-size: 0.9rem;
+    }
+
+    .bar1,.bar2,.bar3 {
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: translate(0, 5.8px) rotate(-45deg);
+    }
+
+    .change .bar3 {
+        transform: translate(0, -5.8px) rotate(45deg);
+    }
+
+    .menu-container>ul>li>a {
+        font-size: 0.8em;
+        padding: 0px;
+    }
+
+    li,a {
+        padding: 3px;
+    }
+
+    .switch {
+        --width-of-switch: 2.5em;
+        --height-of-switch: 1.3em;
+        /* size of sliding icon -- sun and moon */
+        --size-of-icon: 1.1em;
+        --slider-offset: 0.1em;
+        margin-right: 30px;
+        margin-bottom: 10px;
+    }
+
+    .hero-page-texto {
+        width: 100%;
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        padding-top: 40px;
+    }
+
+    .hero-page-texto>h1 {
+        font-size: 1.7em;
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .hero-page-texto>p {
+        font-size: 0.8em;
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-page-texto>button {
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .background-container {
+        background-image: url("images/background.png");
+        background-size: cover;
+        position: absolute;
+        width: 110%;
+        bottom: 0;
+        height: 100%;
+    }
 }

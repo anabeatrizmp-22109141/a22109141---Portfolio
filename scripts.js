@@ -1,5 +1,4 @@
 showMenu = function (bars) {
-    console.log(document.getElementsByClassName('menu-container')[0].style.visibility)
     if (document.getElementsByClassName('menu-container')[0].style.visibility === "visible") {
         document.getElementsByClassName('menu-container')[0].style.visibility = "hidden";
         bars.classList.toggle("change");
@@ -9,4 +8,6 @@ showMenu = function (bars) {
         bars.classList.toggle("change");
     }
 }
+
+
 
