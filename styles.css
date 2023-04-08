@@ -8,7 +8,7 @@
 
 /* Header */
 body {
-    background-color: black;
+    background-color: rgb(25, 25, 25);
 }
 header {
     position: fixed;
@@ -113,6 +113,25 @@ ul {
     transform: translate(-50%, -50%);
 }
 
+.socials {
+    display: flex;
+    margin: 20px 100px 0 100px;
+    justify-content: space-between;
+}
+
+#github, #linkedin {
+    height: 50px;
+    width: 50px;
+    color: rgb(200, 214, 209);
+}
+
+#github:hover, #linkedin:hover {
+    height: 52px;
+    width: 52px;
+    color: white;
+    transition: all 0.1s ease-in-out;
+}
+
 /* botão night mode */
 
 .switch {
@@ -212,7 +231,7 @@ input:checked+.slider:before {
     top: 0;
     height: 100vh;
     width: 50%;
-    background-color: black;
+    background-color:  rgb(22, 22, 22);
     padding-left: 60px;
     color: white;
     display: flex;
@@ -229,10 +248,10 @@ input:checked+.slider:before {
 .hero-page-texto>p {
     font-size: 1.4rem;
     justify-content: left;
+    margin-bottom: 50px;
 }
 
-.hero-page-texto>button {
-    margin-top: 50px;
+#button {
     height: 70px;
     width: 220px;
     background-color: white;
@@ -242,7 +261,7 @@ input:checked+.slider:before {
     transition: all 0.3s ease 0s;
 }
 
-.hero-page-texto>button:hover {
+#button:hover {
     color: white;
     background: linear-gradient(90deg, #ff04b4, #5e0f76);
     transition: all 0.2s ease 0s;
@@ -252,12 +271,25 @@ input:checked+.slider:before {
     scroll-snap-align: start;
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-color: rgb(22, 22, 22);
     display: flex;
-    justify-content: space-between;
-    padding: 100px;
+    justify-content: center;
     align-items: center;
     position: relative;
+}
+
+.about-me > .orbita, .about-me >.container-about-me {
+    margin: 0px 30px 0 30px;
+}
+
+.orbita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 450px;
+    border-radius: 600px;
+    border: rgb(233, 124, 255) 2px dotted;
 }
 
 .circulo-about-me {
@@ -277,8 +309,6 @@ input:checked+.slider:before {
 }
 
 .container-about-me {
-    border: #9a1768 4px solid;
-    border-radius: 50px;
     color: white;
     height: 600px;
     width: 800px;
@@ -286,17 +316,48 @@ input:checked+.slider:before {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     vertical-align: middle;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
+.container-about-me > p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container-about-me > button {
+    margin-top: 0;
+}
+
+.projects {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+    background-color: navy;
+}
+
+.projects {
+    scroll-snap-align: start;
+    background-color: rgb(22, 22, 22);
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .contact-me {
     scroll-snap-align: start;
     height: 100vh;
     width: 100vw;
-    background-color: crimson;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -333,6 +394,16 @@ input:checked+.slider:before {
 
     li,a {
         padding: 3px;
+    }
+
+    .socials {
+        margin: 0px 30px 0px 30px;
+    }
+
+    #github, #linkedin {
+        height: 35px;
+        width: 35px;
+        color: rgb(200, 214, 209);
     }
 
     .switch {
@@ -382,4 +453,6 @@ input:checked+.slider:before {
         bottom: 0;
         height: 100%;
     }
+
+
 }
