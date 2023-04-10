@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Overpass Mono', monospace;
-    overflow: hidden;
+
 }
 
 /* Header */
@@ -51,15 +51,15 @@ header > span {
     transition: 0.4s;
 }
 
-.change .bar1 {
+.change.bar1 {
     transform: translate(0, 11px) rotate(-45deg);
 }
 
-.change .bar2 {
+.change.bar2 {
     opacity: 0;
 }
 
-.change .bar3 {
+.change.bar3 {
     transform: translate(0, -11px) rotate(45deg);
 }
 
@@ -123,11 +123,10 @@ ul {
     height: 50px;
     width: 50px;
     color: rgb(200, 214, 209);
+    cursor: pointer;
 }
 
 #github:hover, #linkedin:hover {
-    height: 52px;
-    width: 52px;
     color: white;
     transition: all 0.1s ease-in-out;
 }
@@ -350,14 +349,117 @@ input:checked+.slider:before {
 }
 
 .contact-me {
+    position: relative;
     scroll-snap-align: start;
     height: 100vh;
     width: 100vw;
     background-color: rgb(22, 22, 22);
     color: white;
+}
+
+.horizontal-strip {
+    position: relative;
+    width: 100vw;
+    height: 50%;
+    background: linear-gradient(90deg, #ff04b4, #9c08c9);
+    top: 25%;
+}
+
+.formulario-text {
+    position: absolute;
+    top:14%;
+    width: 100%;
+    color: white;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.formulario {
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 100;
+    background: rgb(255, 255, 255);
+    width: 600px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario > h1 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+input[type=text] {
+    width: 500px;
+    height: 35px;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: transparent;
+    transition: 0.6 all ease-in;
+}
+
+input[type=text]:focus, #msg:focus {
+    border-width: 0 0 3px;
+    border-image: linear-gradient(90deg, #ff04b4, #9c08c9) 1 100;
+    outline: none;
+}
+
+input[type=text] , #msg {
+    background-color: rgb(241, 241, 241);
+}
+
+.formulario > form {
+    display: flex;
+    flex-direction: column;
+}
+
+#msg {
+    margin-top: 25px;
+    height: 300px;
+    width: 500px;
+    border-color: transparent;
+    outline: none;
+    resize: none;
+}
+
+#submit {
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 40px;
+    width: 200px;
+    margin-left: auto;
+    border: transparent;
+    color: rgb(255, 255, 255);
+    background: rgb(208, 43, 216);
+    background-size: cover;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+#submit:hover {
+    background: rgba(242, 0, 255, 0.802);
+}
+
+#github-2, #linkedin-2 {
+    height: 30px;
+    width: 35px;
+    color: white;
+    transition: 0.2s all;
+}
+
+#github-2:hover, #linkedin-2:hover {
+    height: 30px;
+    width: 35px;
+    color: rgb(212, 212, 212);
+}
+
+.texto-form > p {
+    margin-bottom: 50px;
 }
 
 @media only screen and (max-width: 600px) {
