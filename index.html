@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
     <meta charset="UTF-8">
@@ -29,10 +30,10 @@
         </label>
         <div class="menu-container">
             <ul>
-                <li><a href="#home" onclick="showMenu()">Home</a></li>
-                <li><a href="#about-me" onclick="showMenu()">About me</a></li>
-                <li><a href="#projects" onclick="showMenu()">Projects</a></li>
-                <li><a href="#contact-me" onclick="showMenu()">Contact me</a></li>
+                <li><a id="menu-list" href="#home" onclick="showMenu()">Home</a></li>
+                <li><a id="menu-list" href="#about-me" onclick="showMenu()">About me</a></li>
+                <li><a id="menu-list" href="#projects" onclick="showMenu()">Projects</a></li>
+                <li><a id="menu-list" href="#contact-me" onclick="showMenu()">Contact me</a></li>
                 <div class="socials">
                     <svg id="github" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
@@ -85,6 +86,50 @@
             </div>
             <div class="projects" id="projects">
                 <h1>Projetos</h1>
+                <div class="project-list">
+                    <div class="project">
+                        <img src="images/js-playground.png" alt="">
+                        <div class="overlay">
+                            <h2>Javascript Playground</h2>
+                            <a href=""><span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/minesweeper.png" alt="">
+                        <div class="overlay">
+                            <h2>Minesweeper</h2>
+                            <h3>Kotlin</h3>
+                            <a href=""><span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/deisiflix.png" alt="">
+                        <div class="overlay">
+                            <h2>Deisiflix</h2>
+                            <h3>Java</h3>
+                            <a href=""><span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/deisi-jungle.png" alt="">
+                        <div class="overlay">
+                            <h2>Deisi-Jungle</h2>
+                            <h3>Java e Kotlin</h3>
+                            <a href=""><span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/portfolio.png" alt="">
+                        <div class="overlay">
+                            <h2>Portfolio</h2>
+                            <h3>HTML, CSS e Javascript</h3>
+                            <a href=""><span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h1>COMING SOON</h3>
+                    </div>
+                </div>
             </div>
             <div class="contact-me" id="contact-me">
                 <div class="horizontal-strip"></div>
