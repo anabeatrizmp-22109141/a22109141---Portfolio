@@ -10,6 +10,7 @@
 body {
     background-color: rgb(25, 25, 25);
 }
+
 header {
     position: fixed;
     top: 0; left: 0;
@@ -713,3 +714,87 @@ input[type=text] , #msg {
         width: 100px;
     }
 }
+
+.calculator-page {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    background-color: #414249;
+    border: white 3px solid
+}
+
+.inputs {
+    width: 380px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.inputs > button {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    background-color: white;
+    border: transparent;
+    transition: background-color 0.2s;
+}
+
+.inputs > button:active {
+    background-color: rgb(205, 205, 205);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 200px;
+    height: 90px;
+    font-size: 2.5em;
+    color: white;
+    padding-right: 20px;
+    width: 100%;
+    border: white 3px solid;
+}
+
+#equals {
+    color: white;
+    background-color: #b11374;
+}
+
+#equals:active {
+    background-color: #931061;
+}
+
+#ac {
+    color: white;
+    background-color: #371956;
+}
+
+#ac:active {
+    background-color: #29133f;
+}
+
+#operations {
+    background-color: rgb(186, 185, 185);
+}
+
+#operations:active {
+    background-color: gray;
+}
+
+.text-playground {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+}
+

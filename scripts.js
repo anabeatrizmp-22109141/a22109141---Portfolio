@@ -16,6 +16,3 @@ showMenu = function () {
         bar3.classList.add("change");
     }
 }
-
-
-
