@@ -664,6 +664,10 @@ input[type=text] , #msg {
     .project {
         border-radius: 10px;
     }
+
+    .overlay {
+        text-align: center;
+    }
     
     .project > img {
         width: 150px; height: 150px;
