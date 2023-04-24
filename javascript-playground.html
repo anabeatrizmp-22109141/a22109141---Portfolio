@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 </head>
-<body>
+<body class="jsplayground">
     <header>
         <span>Ana Beatriz Pires</span>
         <button class="menu-button" onclick="showMenu()">
@@ -23,15 +24,15 @@
     </header>
     <main>
         <label class="switch">
-            <input type="checkbox" checked>
+            <input type="checkbox" checked onclick="lightMode()">
             <span class="slider"></span>
         </label>
         <div class="menu-container">
             <ul>
-                <li><a id="menu-list" href="#home" onclick="showMenu()">Home</a></li>
-                <li><a id="menu-list" href="#about-me" onclick="showMenu()">Sobre Mim</a></li>
-                <li><a id="menu-list" href="#projects" onclick="showMenu()">Projetos</a></li>
-                <li><a id="menu-list" href="#contact-me" onclick="showMenu()">Contacta-me</a></li>
+                <li><a id="menu-list" href="index.html#home" onclick="showMenu()">Home</a></li>
+                <li><a id="menu-list" href="index.html#about-me" onclick="showMenu()">Sobre Mim</a></li>
+                <li><a id="menu-list" href="index.html#projects" onclick="showMenu()">Projetos</a></li>
+                <li><a id="menu-list" href="index.html#contact-me" onclick="showMenu()">Contacta-me</a></li>
                 <div class="socials">
                     <a href="https://github.com/anabeatrizmp-22109141" target="_blank">
                         <svg id="github" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -50,7 +51,7 @@
                 </div>
             </ul>
         </div>
-        <div class="paginas">
+        <div class="playground-page">
             <div class="calculator-page">
                 <div class="calculator">
                     <div class="display" type="text" disabled></div>
@@ -73,9 +74,19 @@
                         <button value="/" id="operations">/</button>
                     </div>
                 </div>
+                <div class="date"></div>
             </div>
             <div class="text-playground">
-
+                <p class="p-opiniao"></p>
+                <img src="images/astronaut.png" alt="astronauta" width="450" height="450">
+                <input type="text" placeholder="Escreve uma frase sobre o astronauta 👨‍🚀" class="playground-inputs" id="opiniao">
+                <input type="text" placeholder="Diz-me o teu nome!" class="playground-inputs" id="nomes">
+                <input type="submit" value="Submit" class="submit-opinion" id="submit-playground" onclick="playgroundText()">
+                <div class="nomes">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                </div>
             </div>
         </div>
     </main>

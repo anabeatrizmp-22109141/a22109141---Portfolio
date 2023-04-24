@@ -17,8 +17,8 @@ showMenu = function () {
     }
 }
 
-const display = document.querySelector(".display");
-const buttons = document.querySelectorAll("button");
+const display = document.querySelector(".display")
+const buttons = document.querySelectorAll("button")
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -35,3 +35,22 @@ buttons.forEach((button) => {
         }
         console.log(display.value)
     })})
+
+const data = document.querySelector(".date")
+const date = new Date()
+const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+data.innerText = date.getDate() + " de " + meses[date.getMonth()] + " , " + date.getFullYear();
+
+
+function playgroundText() {
+    console.log("a");
+    const opiniao = document.getElementById("opiniao").value
+    document.querySelector("p.p-opiniao").innerHTML = opiniao;
+    const nome = document.getElementById("nomes").value
+    document.querySelectorAll(".nomes p").forEach(n => n.innerHTML = nome)
+    return true;
+}
+
+function lightMode() {
+    document.getElementsByClassName("jsplayground").style.backgroundColor = "white";
+}

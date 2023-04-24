@@ -412,7 +412,7 @@ input:checked+.slider:before {
 
 .contact-me {
     position: relative;
-    scroll-snap-align: start;
+    scroll-snap-align: end;
     height: 100vh;
     width: 100vw;
     background-color: rgb(22, 22, 22);
@@ -456,7 +456,7 @@ input:checked+.slider:before {
     margin-bottom: 15px;
 }
 
-input[type=text] {
+.form-input {
     width: 500px;
     height: 35px;
     outline: 0;
@@ -465,13 +465,13 @@ input[type=text] {
     transition: 0.6 all ease-in;
 }
 
-input[type=text]:focus, #msg:focus {
+.form-input:focus, #msg:focus {
     border-width: 0 0 3px;
     border-image: linear-gradient(90deg, #ff04b4, #9c08c9) 1 100;
     outline: none;
 }
 
-input[type=text] , #msg {
+.form-input , #msg {
     background-color: rgb(241, 241, 241);
 }
 
@@ -719,18 +719,25 @@ input[type=text] , #msg {
     }
 }
 
-.calculator-page {
-    scroll-snap-align: start;
-    height: 100vh;
-    width: 100vw;
+.playground-page {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 200px;
+}
+
+.calculator-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .calculator {
     background-color: #414249;
-    border: white 3px solid
+    border: white 3px solid;
 }
 
 .inputs {
@@ -796,9 +803,111 @@ input[type=text] , #msg {
     background-color: gray;
 }
 
+.date {
+    color: white;
+    font-size: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 .text-playground {
     scroll-snap-align: start;
     height: 100vh;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 15px;
+}
+
+.playground-inputs {
+    width: 100%;
+    height: 30px;
+    background-color: #414249;
+}
+
+.playground-inputs:focus {
+    outline: transparent;
+    background-color: #52535c;
+}
+
+.submit-opinion {
+    width: 100%; height: 30px;
+    background-color: #b11374;
+    border: none;
+    color: white;
+}
+
+.submit-opinion:active {
+    background-color: #9f1469;
+}
+
+.nomes  {
+    display: flex;
+    gap: 50px;
+}
+
+footer {
+    background-color: rgb(33, 33, 33);;
+    height: 200px;
+    scroll-snap-align: end;
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 15px;
+}
+
+.footer-logo-text > p {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-anchor-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    height: 100%;
+}
+
+.footer-anchor-link > a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; height: 100%;
+}
+
+.footer-anchor {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    color: #5f057a;
+    font-weight: bolder;
+    gap: 30px;
+    width: 100%; height: 100%;
+}
+
+.footer-anchor > a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.15s ease-in;
+}
+
+.footer-anchor > a:hover {
+    color: #931061;
 }
 
