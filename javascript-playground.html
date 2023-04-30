@@ -79,13 +79,13 @@
             <div class="text-playground">
                 <p class="p-opiniao"></p>
                 <img src="images/astronaut.png" alt="astronauta" width="450" height="450">
-                <input type="text" placeholder="Escreve uma frase sobre o astronauta 👨‍🚀" class="playground-inputs" id="opiniao">
-                <input type="text" placeholder="Diz-me o teu nome!" class="playground-inputs" id="nomes">
+                <input type="text" placeholder="Escreve uma frase sobre o astronauta 👨‍🚀" class="playground-inputs" id="opiniao" onmouseover="mudaCorInput(this)" onmouseout="tiraCorInput(this)">
+                <input type="text" placeholder="Diz-me o teu nome!" class="playground-inputs" id="nomes" onmouseover="mudaCorInput(this)" onmouseout="tiraCorInput(this)">
                 <input type="submit" value="Submit" class="submit-opinion" id="submit-playground" onclick="playgroundText()">
                 <div class="nomes">
-                    <p>1</p>
-                    <p>2</p>
-                    <p>3</p>
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                    <p id="p3"></p>
                 </div>
             </div>
         </div>

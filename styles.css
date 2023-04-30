@@ -404,6 +404,7 @@ input:checked+.slider:before {
 
 .overlay > h2 {
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .project:hover .overlay {
@@ -720,6 +721,7 @@ input:checked+.slider:before {
 }
 
 .playground-page {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

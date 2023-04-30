@@ -52,5 +52,42 @@ function playgroundText() {
 }
 
 function lightMode() {
-    document.getElementsByClassName("jsplayground").style.backgroundColor = "white";
+    var body = document.querySelector("body");
+    var bar1 = document.querySelector(".bar1");
+    var bar2 = document.querySelector(".bar2");
+    var bar3 = document.querySelector(".bar3");
+    var data = document.querySelector(".date");
+    var calculator = document.querySelector(".calculator");
+    var display = document.querySelector(".display");
+    var textPlayground = document.querySelector(".text-playground");
+
+    if(body.style.backgroundColor !=  "rgb(224, 224, 224)") {
+        body.style.backgroundColor =  "#E0e0e0";
+        bar1.style.backgroundColor =  "black";
+        bar2.style.backgroundColor =  "black";
+        bar3.style.backgroundColor =  "black";
+        data.style.color = "black";
+        calculator.style.border = "black 5px solid";
+        display.style.border = "black 4px solid";
+        textPlayground.style.color = "black";
+    }
+    else {
+        console.log("a");
+        body.style.backgroundColor = "rgb(25, 25, 25)";
+        bar1.style.backgroundColor =  "white";
+        bar2.style.backgroundColor =  "white";
+        bar3.style.backgroundColor =  "white";
+        data.style.color = "white";
+        calculator.style.border = "white 3px solid";
+        display.style.border = "white 3px solid";
+        textPlayground.style.color = "white";
+    }
+}
+
+function mudaCorInput(input) {
+    input.style.backgroundColor = "rgb(95, 5, 122)";
+}
+
+function tiraCorInput(input) {
+    input.style.backgroundColor = "#414249";
 }
